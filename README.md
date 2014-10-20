@@ -5,5 +5,6 @@ Coding Task at OSUIA - Fronter RSS feed reader
 
 
 ## Authors:
-Yngve O. Ranestad
+Yngve Olsen Ranestad 
+
 Sondre Bjellås
