@@ -5,3 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
     h1[0].innerText = h1[0].innerText + ' \'Allo';
   }
 }, false);
+
+
+
+$(function() {
+
+  console.log('Fronter Feeder starting...');
+
+  
+
+});
