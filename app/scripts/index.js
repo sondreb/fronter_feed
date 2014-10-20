@@ -1,12 +1,4 @@
 'use strict';
-document.addEventListener('DOMContentLoaded', function() {
-  var h1 = document.getElementsByTagName('h1');
-  if (h1.length > 0) {
-    h1[0].innerText = h1[0].innerText + ' \'Allo';
-  }
-}, false);
-
-
 
 $(function() {
 
@@ -24,15 +16,24 @@ $('#last').click(function(){
   var jqxhr = $.ajax({url: url, username: $('#brukernavn').val(), password: $('#passord').val()} )
     .done(function(data) {
 
+
+
+      //$('#login').hide();
+
+              var feedElement = $('#feed');
+
+      feedElement.html('');
+
       var $xml = $(data);
       $xml.find("item").each(function() {
 
         var $this = $(this);
-
-        console.log($this.find("title").text());
+        feedElement.append('<h3>' + $this.find("title").text() + '</h3>');
+        feedElement.append('<p>Dato: ' + $this.find("pubDate").text() + ' - Forfatter: ' + $this.find("author").text()  + '</p>');
+        feedElement.append('<p>' + $this.find("description").text() + '</p>');
 
       });
-      
+
       console.log(data);
       console.log( "success" );
 
